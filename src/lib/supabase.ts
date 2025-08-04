@@ -2,9 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 
 // Initialize Supabase client
 // Using direct values from project configuration
-const supabaseUrl = 'https://lgaepyogulgflerpctmq.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxnYWVweW9ndWxnZmxlcnBjdG1xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI3Nzg5MDksImV4cCI6MjA2ODM1NDkwOX0.iF8L-n7KnZPrzGCz37S-tP2UdyvEBHibcZRSJYY-UNs';
-
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey, {
   auth: {
     persistSession: true,
